@@ -11,13 +11,17 @@ class Router {
     const url = routeMap[opt.version];
     this.logger.log(`Calling ${url} for ${opt.version}`);
 
-    this.request.post({
-      url: url,
-      form: {code: opt.code}
-    }, (err, httpResponse, body) => {
-      done(body);
-    });
-
+    if (url && opt.code) {
+      this.request.post({
+        url: url,
+        form: {code: opt.code}
+      }, (err, httpResponse, body) => {
+        done(body);
+      });
+    } else {
+      this.logger.log(`Calling without url or code. url: ${url}, code: ${opt.version}`);
+      done({result: 'Invalid specified'});
+    }
   }
 
 }

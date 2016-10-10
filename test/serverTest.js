@@ -36,4 +36,30 @@ describe("Router", function() {
     });
   });
 
+  it("will return error when no mapping", function(done) {
+    const routeMap = {
+      'exampleOne': 'http://exampleOne:8881',
+      'exampleTwo': 'http://exampleTwo:8882'
+    };
+
+    router.route({version: 'invalid', code: 'some_code'}, routeMap, (body) => {
+      expect(body).to.deep.equal({result: 'Invalid specified'});
+      expect(post).to.have.been.called.exactly(0);
+      done();
+    });
+  });
+
+  it("will return error when no code", function(done) {
+    const routeMap = {
+      'exampleOne': 'http://exampleOne:8881',
+      'exampleTwo': 'http://exampleTwo:8882'
+    };
+
+    router.route({version: 'exampleOne', code: ''}, routeMap, (body) => {
+      expect(body).to.deep.equal({result: 'Invalid specified'});
+      expect(post).to.have.been.called.exactly(0);
+      done();
+    });
+  });
+
 });

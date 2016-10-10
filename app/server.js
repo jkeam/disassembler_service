@@ -29,11 +29,7 @@ const handlePost = (req, res) => {
   busboy.on('field', (fieldname, val, fieldnameTruncated, valTruncated, encoding, mimetype) => {
     if (fieldname == 'version') {
       version = val;
-    }
-  });
-
-  busboy.on('code', (fieldname, val, fieldnameTruncated, valTruncated, encoding, mimetype) => {
-    if (fieldname == 'code') {
+    } else if (fieldname == 'code') {
       code = val;
     }
   });
