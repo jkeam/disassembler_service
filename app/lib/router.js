@@ -1,4 +1,3 @@
-
 class Router {
 
   constructor(newLogger, request) {
@@ -7,6 +6,8 @@ class Router {
   }
 
   //opt: {version, code}
+  //routeMap: the version -> url map
+  //done: done callback, send back json
   route(opt, routeMap, done) {
     const url = routeMap[opt.version];
     this.logger.log(`Calling ${url} for ${opt.version}`);

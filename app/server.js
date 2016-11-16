@@ -18,7 +18,7 @@ const logger = new (winston.Logger)({
 const handlePost = (req, res) => {
   const router = new Router(logger, request);
   const busboy = new Busboy({ headers: req.headers });
-  let version = ""; 
+  let version = "";
   let code = "";
 
   const writeOutput = (respObject) => {
@@ -33,7 +33,7 @@ const handlePost = (req, res) => {
       code = val;
     }
   });
-  
+
   busboy.on('finish', () => {
     router.route({version, code}, routeMap, writeOutput);
   });

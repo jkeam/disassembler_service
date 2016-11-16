@@ -28,18 +28,18 @@ npm start
 ## Docker
 
 ### Docker
-1.  Build image 
+1.  Build image
   ```
-  docker build -t javabytes/dissembler-service .
+  docker build -t jkeam/dissembler-service .
   ```
 
 2.  Run docker
   ```
-  docker run -p 8000:8000 -d -e ENV_PORT=8000 -e ROUTE_MAP=./config/javaRouteMap javabytes/dissembler-service
+  docker run -p 8000:8000 -d -e ENV_PORT=8000 -e ROUTE_MAP=./config/javaRouteMap jkeam/dissembler-service
   ```
 
   or
 
   ```
-  docker run -p 8000:8000 -d -e ENV_PORT=8000 -e ROUTE_MAP=./config/rubyRouteMap javabytes/dissembler-service
+  docker run -p 8000:8000 -d -e ENV_PORT=8000 -e ROUTE_MAP=./config/rubyRouteMap jkeam/dissembler-service
   ```
