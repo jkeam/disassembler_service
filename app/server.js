@@ -8,11 +8,14 @@ const env          = process.env.NODE_ENV || 'dev';
 const ROUTE_MAP    = process.env.ROUTE_MAP || './config/routeMap';
 const routeMap     = require(ROUTE_MAP);
 
-const logger = new (winston.Logger)({
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.json(),
+  defaultMeta: { service: 'user-service' },
   transports: [
-    new (winston.transports.Console)(),
-    new (winston.transports.File)({ filename: `./logs/${env}.log` })
-  ]
+    new winston.transports.File({ filename: `./logs/${env}-error.log`, level: 'error' }),
+    new winston.transports.File({ filename: `./logs/${env}.log` }),
+  ],
 });
 
 const handlePost = (req, res) => {

@@ -7,22 +7,22 @@ Service endpoint to disassemble code.
 ## Setup
 
 ### Prereq
-Node 1.6 or later
+1. Node v15+
+2. yarn 1.22.x+
 
 ### Install Dep
 ```
-npm install
+yarn
 ```
 
 ### Test
 ```
-npm test
+yarn test
 ```
 
 ### Start Server
 ```
-npm
-npm start
+yarn start
 ```
 
 ## Docker

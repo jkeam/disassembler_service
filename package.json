@@ -16,21 +16,21 @@
     "javascript",
     "disassembler"
   ],
-  "author": "Jon Keam <jpkeam@gmail.com> (http://blog.jonkeam.com/)",
+  "author": "Jon Keam <jpkeam@gmail.com> (http://jonkeam.com/)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jkeam/disassembler_service/issues"
   },
   "homepage": "https://github.com/jkeam/disassembler_service#readme",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "chai-spies": "^0.7.1",
-    "mocha": "^3.0.2"
+    "chai": "^4.2.0",
+    "chai-spies": "^1.0.0",
+    "mocha": "^8.2.1"
   },
   "dependencies": {
-    "bluebird": "^3.4.6",
-    "busboy": "^0.2.13",
+    "bluebird": "^3.7.2",
+    "busboy": "^0.3.1",
     "request": "^2.75.0",
-    "winston": "^2.2.0"
+    "winston": "^3.3.3"
   }
 }
